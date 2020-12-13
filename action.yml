@@ -1,6 +1,9 @@
 # action.yml
 name: 'confluence-markdown-sync'
 description: 'Copy content of a markdown file to a confluence site'
+branding:
+  icon: 'upload-cloud'  
+  color: 'blue'
 inputs:
   from: 
     description: 'Path to the markdown file. Relative to root of repository'
