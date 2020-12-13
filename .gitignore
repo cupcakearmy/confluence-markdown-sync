@@ -1,6 +1,7 @@
-/node_modules
 .mypy_cache
 .venv
 
+# Dev
+.vscode
 Test.md
 .github/workflows
