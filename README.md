@@ -33,3 +33,13 @@ Uses basic auth for the rest api.
 - `token`: You can generate the token [here](https://id.atlassian.com/manage-profile/security/api-tokens). Link to [Docs](https://confluence.atlassian.com/cloud/api-tokens-938839638.html)
 
 - `to`: The page ID can be found by simply navigating to the page where you want the content to be postet to and looke at the url. It will look something like this: `https://<cloud-id>.atlassian.net/wiki/spaces/<space>/pages/<page-id>/<title>`
+
+
+## Development
+
+1. Clone the repo
+2. Install [act](https://github.com/nektos/act)
+3. Create the same config in the repo folder as in the getting started section above.
+4. Change `uses: confluence-markdown-sync` -> `uses: ./`
+5. Create an example markdown file `Some.md` and set it in the config `from: './Some.md'`
+6. Run locally `act -b`
