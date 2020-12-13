@@ -1,1 +1,6 @@
 /node_modules
+.mypy_cache
+.venv
+
+Test.md
+.github/workflows
