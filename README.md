@@ -12,16 +12,15 @@ jobs:
   dev:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - uses: confluence-markdown-sync
-      with:
-        from: './README.md'
-        to: '123456' # The confluence page id where to write the output
-        cloud: <my-confluence-cloud-id>
-        user: <my.user@example.org>
-        token: <my-token>
-
+      - uses: confluence-markdown-sync
+        with:
+          from: './README.md'
+          to: '123456' # The confluence page id where to write the output
+          cloud: <my-confluence-cloud-id>
+          user: <my.user@example.org>
+          token: <my-token>
 ```
 
 ## Authentication
@@ -38,6 +37,15 @@ Uses basic auth for the rest api.
 
 It's **higly reccomended** that you use secrets!
 
+To use them you need them to specify them before in your repo. [Docs](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets)
+
+The you can use them in any input field.
+
+```yml
+# .github/workflows/my-workflow.yml
+# ...
+token: ${{ secrets.token }}
+```
 
 ## Development
 
@@ -47,3 +55,21 @@ It's **higly reccomended** that you use secrets!
 4. Change `uses: confluence-markdown-sync` -> `uses: ./`
 5. Create an example markdown file `Some.md` and set it in the config `from: './Some.md'`
 6. Run locally `act -b`
+
+### With secrets
+
+You can simply create a `.secrets` file and specify it to `act`
+
+```
+token=abc123
+```
+
+```yml
+# .github/workflows/dev.yml
+# ...
+token: ${{ secrets.token }}
+```
+
+```bash
+act -b --secret-file .secrets
+```
