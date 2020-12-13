@@ -20,10 +20,9 @@ for key in ['from', 'to', 'cloud', 'user', 'token']:
 with open(join(workspace, envs['from'])) as f:
     md = f.read()
 
-current = requests.get(
-    f"https://{envs['cloud']}.atlassian.net/wiki/rest/api/content/{envs['to']}",
-    auth=(envs['user'], envs['token'])
-).json()
+url = f"https://{envs['cloud']}.atlassian.net/wiki/rest/api/content/{envs['to']}"
+
+current = requests.get(url, auth=(envs['user'], envs['token'])).json()
 
 html = markdown(md, extensions=[GithubFlavoredMarkdownExtension()])
 content = {
@@ -39,10 +38,7 @@ content = {
     }
 }
 
-updated = requests.put(
-    f"https://{envs['cloud']}.atlassian.net/wiki/rest/api/content/{envs['to']}",
-    json=content,
-    auth=(envs['user'], envs['token'])
-).json()
-
-print(updated)
+updated = requests.put(url, json=content, auth=(
+    envs['user'], envs['token'])).json()
+link = updated['_links']['base'] + updated['_links']['webui']
+print(f'Uploaded content successfully to page {link}')
