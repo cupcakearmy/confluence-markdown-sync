@@ -34,6 +34,10 @@ Uses basic auth for the rest api.
 
 - `to`: The page ID can be found by simply navigating to the page where you want the content to be postet to and looke at the url. It will look something like this: `https://<cloud-id>.atlassian.net/wiki/spaces/<space>/pages/<page-id>/<title>`
 
+### Using secrets
+
+It's **higly reccomended** that you use secrets!
+
 
 ## Development
 
