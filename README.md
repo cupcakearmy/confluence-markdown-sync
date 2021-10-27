@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: cupcakearmy/confluence-markdown-sync@v1
+      - uses: cupcakearmy/confluence-markdown-sync
         with:
           from: './README.md'
           to: '123456' # The confluence page id where to write the output
@@ -52,7 +52,7 @@ token: ${{ secrets.token }}
 1. Clone the repo
 2. Install [act](https://github.com/nektos/act)
 3. Create the same config in the repo folder as in the getting started section above.
-4. Change `uses: cupcakearmy/confluence-markdown-sync@v1` -> `uses: ./`
+4. Change `uses: cupcakearmy/confluence-markdown-sync` -> `uses: ./`
 5. Create an example markdown file `Some.md` and set it in the config `from: './Some.md'`
 6. Run locally `act -b`
 
