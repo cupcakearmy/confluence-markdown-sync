@@ -1,5 +1,5 @@
-from typing import Dict, List
-from os import listdir, environ
+from typing import Dict
+from os import environ
 from os.path import join
 
 import requests

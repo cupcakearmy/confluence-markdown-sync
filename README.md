@@ -58,10 +58,10 @@ token: ${{ secrets.token }}
 
 ### With secrets
 
-You can simply create a `.secrets` file and specify it to `act`
+You can simply create a `.secrets` file and specify it to `act`.
 
 ```
-token=abc123
+TOKEN=abc123
 ```
 
 ```yml
