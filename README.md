@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: cupcakearmy/confluence-markdown-sync
+      - uses: cupcakearmy/confluence-markdown-sync@v1.0.1
         with:
           from: './README.md'
           to: '123456' # The confluence page id where to write the output
