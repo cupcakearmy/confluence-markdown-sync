@@ -1,6 +1,6 @@
-from typing import Dict
 from os import environ
 from os.path import join
+from typing import Dict
 
 import requests
 from markdown import markdown

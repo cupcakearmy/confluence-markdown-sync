@@ -1,12 +1,12 @@
-FROM python:3.9-alpine
-
-WORKDIR /tmp
-RUN pip install pipenv
-COPY ./Pipfile* ./
-RUN pipenv install --system --deploy
-
+FROM python:3.10-alpine
 
 WORKDIR /action
+
+COPY ./Pipfile* ./
+RUN pip install pipenv && \
+  pipenv install --system --deploy && \
+  pipenv --clear
+
 COPY ./src .
 
 ENTRYPOINT [ "python" ]
