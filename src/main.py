@@ -3,18 +3,23 @@ from os.path import join
 from typing import Dict
 
 import requests
+from dotenv import load_dotenv
 from markdown import markdown
 from mdx_gfm import GithubFlavoredMarkdownExtension
 
+load_dotenv()
+
 workspace = environ.get('GITHUB_WORKSPACE')
 if not workspace:
-    raise Exception('No workspace is set')
+    print('No workspace is set')
+    exit(1)
 
 envs: Dict[str, str] = {}
 for key in ['from', 'to', 'cloud', 'user', 'token']:
     value = environ.get(f'INPUT_{key.upper()}')
     if not value:
-        raise Exception(f'Missing value for {key}')
+        print(f'Missing value for {key}')
+        exit(1)
     envs[key] = value
 
 with open(join(workspace, envs['from'])) as f:

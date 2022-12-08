@@ -2,7 +2,8 @@
 .venv
 
 # Dev
+.env
 .vscode
 Test.md
-.github/workflows
+.github/workflows/dev.yaml
 *.secrets
