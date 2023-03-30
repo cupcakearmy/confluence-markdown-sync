@@ -49,6 +49,10 @@ The you can use them in any input field.
 token: ${{ secrets.token }}
 ```
 
+## Known Limitations
+
+For now images will not be uploaded [see ticket](https://github.com/cupcakearmy/confluence-markdown-sync/issues/5), they would require extra steps. If anyone feedls brave enough, constributions are welcomed :)
+
 ## Development
 
 1. Clone the repo
