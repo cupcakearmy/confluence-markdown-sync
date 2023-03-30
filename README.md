@@ -41,7 +41,7 @@ It's **higly reccomended** that you use secrets!
 
 To use them you need them to specify them before in your repo. [Docs](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets)
 
-The you can use them in any input field.
+Then you can use them in any input field.
 
 ```yml
 # .github/workflows/my-workflow.yml
