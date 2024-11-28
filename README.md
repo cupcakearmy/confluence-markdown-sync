@@ -27,13 +27,17 @@ jobs:
 
 Uses basic auth for the rest api.
 
-- `cloudUrl`: The URL (without https://) of your confluence instance. E.g: `acme.atlassian.net/...` or `acme.jira.com`
+- `cloud`: Can be either:
+  - A subdomain (e.g., `acme` for Atlassian hosted instances)
+  - A full URL (e.g., `https://mycompany.com` for self-hosted instances)
 
 - `user`: The user that generated the access token
 
 - `token`: You can generate the token [here](https://id.atlassian.com/manage-profile/security/api-tokens). Link to [Docs](https://confluence.atlassian.com/cloud/api-tokens-938839638.html)
 
-- `to`: The page ID can be found by simply navigating to the page where you want the content to be postet to and looke at the url. It will look something like this: `https://<cloudUrl>/wiki/spaces/<space>/pages/<page-id>/<title>`
+- `to`: The page ID can be found by simply navigating to the page where you want the content to be posted to and look at the url. It will look something like this: 
+  - For Atlassian hosted: `https://<subdomain>.atlassian.net/wiki/spaces/<space>/pages/<page-id>/<title>`
+  - For self-hosted: `https://<your-url>/wiki/spaces/<space>/pages/<page-id>/<title>`
 
 ### Using secrets
 
