@@ -15,7 +15,7 @@ if not workspace:
     exit(1)
 
 envs: Dict[str, str] = {}
-for key in ['from', 'to', 'cloud', 'user', 'token']:
+for key in ['from', 'to', 'cloudUrl', 'user', 'token']:
     value = environ.get(f'INPUT_{key.upper()}')
     if not value:
         print(f'Missing value for {key}')
@@ -25,7 +25,7 @@ for key in ['from', 'to', 'cloud', 'user', 'token']:
 with open(join(workspace, envs['from'])) as f:
     md = f.read()
 
-url = f"https://{envs['cloud']}.atlassian.net/wiki/rest/api/content/{envs['to']}"
+url = f"https://{envs['cloudUrl']}/wiki/rest/api/content/{envs['to']}"
 
 current = requests.get(url, auth=(envs['user'], envs['token'])).json()
 
