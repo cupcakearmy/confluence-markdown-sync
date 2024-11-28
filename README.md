@@ -28,7 +28,7 @@ jobs:
 Uses basic auth for the rest api.
 
 - `cloud`: Can be either:
-  - A subdomain (e.g., `acme` for Atlassian hosted instances)
+  - A subdomain (`acme` for Atlassian hosted instances (e.g. `https://acme.atlassian.net`))
   - A full URL (e.g., `https://mycompany.com` for self-hosted instances)
 
 - `user`: The user that generated the access token
